@@ -17,8 +17,9 @@ const ResponseWidget = () => {
 
   const { good, neutral, bad } = feedback;
   const totalFeedback = good + neutral + bad;
-  const positiveFeedbackPercentage =
-    totalFeedback === 0 ? 0 : Math.round((good / totalFeedback) * 100);
+  const positiveFeedbackPercentage = totalFeedback
+    ? Math.round((good / totalFeedback) * 100)
+    : 0;
 
   return (
     <div>
