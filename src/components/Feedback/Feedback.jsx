@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Statistics from '../Statistics/Statistics';
+import styles from './Feedback.module.css';
 
 const ResponseWidget = () => {
   const [feedback, setFeedback] = useState({
@@ -24,9 +25,18 @@ const ResponseWidget = () => {
   return (
     <div>
       <h2>Response Widget</h2>
-      <button onClick={() => handleFeedback('good')}>Good</button>
-      <button onClick={() => handleFeedback('neutral')}>Neutral</button>
-      <button onClick={() => handleFeedback('bad')}>Bad</button>
+      <button className={styles.button} onClick={() => handleFeedback('good')}>
+        Good
+      </button>
+      <button
+        className={styles.button}
+        onClick={() => handleFeedback('neutral')}
+      >
+        Neutral
+      </button>
+      <button className={styles.button} onClick={() => handleFeedback('bad')}>
+        Bad
+      </button>
       <Statistics
         good={good}
         neutral={neutral}
